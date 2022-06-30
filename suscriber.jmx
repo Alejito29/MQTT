@@ -29,7 +29,7 @@
         <OnceOnlyController guiclass="OnceOnlyControllerGui" testclass="OnceOnlyController" testname="Once Only Controller" enabled="true"/>
         <hashTree>
           <net.xmeter.samplers.ConnectSampler guiclass="net.xmeter.gui.ConnectSamplerUI" testclass="net.xmeter.samplers.ConnectSampler" testname="MQTT Connect Suscriber" enabled="true">
-            <stringProp name="mqtt.server">54.227.100.51</stringProp>
+            <stringProp name="mqtt.server">54.227.180.92</stringProp>
             <stringProp name="mqtt.port">8082</stringProp>
             <stringProp name="mqtt.version">3.1</stringProp>
             <stringProp name="mqtt.conn_timeout">10</stringProp>
@@ -49,8 +49,26 @@
           </net.xmeter.samplers.ConnectSampler>
           <hashTree/>
         </hashTree>
-        <net.xmeter.samplers.SubSampler guiclass="net.xmeter.gui.SubSamplerUI" testclass="net.xmeter.samplers.SubSampler" testname="User valido topic" enabled="true">
+        <net.xmeter.samplers.SubSampler guiclass="net.xmeter.gui.SubSamplerUI" testclass="net.xmeter.samplers.SubSampler" testname="Autenticación y tópico válidos" enabled="true">
           <stringProp name="mqtt.topic_name">colombia/alejo/bogota/user1</stringProp>
+          <stringProp name="mqtt.qos_level">1</stringProp>
+          <boolProp name="mqtt.add_timestamp">true</boolProp>
+          <boolProp name="mqtt.debug_response">true</boolProp>
+          <stringProp name="mqtt.sample_condition">specified elapsed time (ms)</stringProp>
+          <stringProp name="mqtt.sample_condition_value">1000</stringProp>
+        </net.xmeter.samplers.SubSampler>
+        <hashTree/>
+        <net.xmeter.samplers.SubSampler guiclass="net.xmeter.gui.SubSamplerUI" testclass="net.xmeter.samplers.SubSampler" testname="Autenticación inválida" enabled="true">
+          <stringProp name="mqtt.topic_name">colombia/alejo/bogota/user1</stringProp>
+          <stringProp name="mqtt.qos_level">1</stringProp>
+          <boolProp name="mqtt.add_timestamp">true</boolProp>
+          <boolProp name="mqtt.debug_response">true</boolProp>
+          <stringProp name="mqtt.sample_condition">specified elapsed time (ms)</stringProp>
+          <stringProp name="mqtt.sample_condition_value">1000</stringProp>
+        </net.xmeter.samplers.SubSampler>
+        <hashTree/>
+        <net.xmeter.samplers.SubSampler guiclass="net.xmeter.gui.SubSamplerUI" testclass="net.xmeter.samplers.SubSampler" testname="Tópico inválido" enabled="true">
+          <stringProp name="mqtt.topic_name">panama/colon/user1</stringProp>
           <stringProp name="mqtt.qos_level">1</stringProp>
           <boolProp name="mqtt.add_timestamp">true</boolProp>
           <boolProp name="mqtt.debug_response">true</boolProp>
